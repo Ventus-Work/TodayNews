@@ -61,8 +61,8 @@ export default function Home() {
   return (
     <Container>
       <Header>
-        <h1>Let's do it together.</h1>
-        <p>We travel the world in search of stories. Come along for the ride.</p>
+        <h1>CardNews</h1>
+        <p>벤투스 개인 실습 페이지지</p>
         <button>View Latest Posts</button>
       </Header>
       <h2>Featured Posts</h2>
