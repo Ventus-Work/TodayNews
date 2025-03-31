@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import styled from 'styled-components';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,103 +12,129 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const Container = styled.div`
+  text-align: center;
+  padding: 20px;
+`;
+
+const Header = styled.header`
+  background: url('https://media.istockphoto.com/id/813018646/ko/%EC%82%AC%EC%A7%84/%EC%83%88%EB%B2%BD%EC%97%90-%ED%95%B4%EB%B0%94%EB%9D%BC%EA%B8%B0.jpg?s=2048x2048&w=is&k=20&c=tyjIe5BoORxN5jHtCAQZEe4sDuSKqX3SVnnZPMYZr2U=') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 60px 20px;
+`;
+
+const FeaturedPosts = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+`;
+
+const PostCard = styled.div`
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const PostImage = styled.img`
+  width: 100%;
+`;
+
+const PostContent = styled.div`
+  padding: 10px;
+`;
+
+const RecentPosts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const RecentPostCard = styled(PostCard)`
+  width: 200px;
+  margin: 10px;
+`;
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <Container>
+      <Header>
+        <h1>Let's do it together.</h1>
+        <p>We travel the world in search of stories. Come along for the ride.</p>
+        <button>View Latest Posts</button>
+      </Header>
+      <h2>Featured Posts</h2>
+      <FeaturedPosts>
+        <PostCard>
+          <PostImage src="https://via.placeholder.com/300x200" alt="The Road Ahead" />
+          <PostContent>
+            <h3>The Road Ahead</h3>
+            <p>By Matt Vogels</p>
+            <p>September 26, 2019</p>
+          </PostContent>
+        </PostCard>
+        <PostCard>
+          <PostImage src="https://via.placeholder.com/300x200" alt="From Top Down" />
+          <PostContent>
+            <h3>From Top Down</h3>
+            <p>By William Wong</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </PostCard>
+      </FeaturedPosts>
+      <h2>Most Recent</h2>
+      <RecentPosts>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Still Standing Tall" />
+          <PostContent>
+            <h4>Still Standing Tall</h4>
+            <p>By William Wong</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Sunny Side Up" />
+          <PostContent>
+            <h4>Sunny Side Up</h4>
+            <p>By Matt Vogels</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Water Falls" />
+          <PostContent>
+            <h4>Water Falls</h4>
+            <p>By William Wong</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Through the Mist" />
+          <PostContent>
+            <h4>Through the Mist</h4>
+            <p>By William Wong</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Awaken Early" />
+          <PostContent>
+            <h4>Awaken Early</h4>
+            <p>By Matt Vogels</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+        <RecentPostCard>
+          <PostImage src="https://via.placeholder.com/200x150" alt="Try it Always" />
+          <PostContent>
+            <h4>Try it Always</h4>
+            <p>By William Wong</p>
+            <p>September 25, 2019</p>
+          </PostContent>
+        </RecentPostCard>
+      </RecentPosts>
+    </Container>
   );
 }
