@@ -1,3 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,16 +37,25 @@ body {
 }
 
 .header {
-  background-image: url('/hero-forest.png');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f8f8f8;
   height: 500px;
   color: white;
   text-align: center;
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
 }
 
 .overlay {
@@ -33,6 +69,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 nav {
