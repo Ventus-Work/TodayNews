@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -12,15 +11,13 @@ export default function Home() {
 
       <header className="header">
         <div className="image-container">
-          <Image
+          <img
             src="/hero-forest.png"
             alt="Forest background"
-            fill
-            priority
             style={{
-              objectFit: 'fill',
               width: '100%',
-              height: '100%'
+              height: '100%',
+              objectFit: 'fill'
             }}
           />
         </div>
