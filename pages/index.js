@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,7 +10,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <header className="header" style={{ backgroundImage: "url('/hero-forest.png')" }}>
+      <header className="header">
+        <div className="image-container">
+          <Image
+            src="/hero-forest.png"
+            alt="Forest background"
+            fill
+            priority
+            style={{
+              objectFit: 'fill',
+              width: '100%',
+              height: '100%'
+            }}
+          />
+        </div>
         <div className="overlay">
           <nav>
             <div className="logo">Escape.</div>
