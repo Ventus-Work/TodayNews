@@ -1,26 +1,231 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.header {
+  background-image: url('/hero-forest.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f8f8f8;
+  height: 500px;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.hero-text {
+  max-width: 650px;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #e67e22;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.category {
+  margin: 0 20px;
+  color: #888;
+  text-decoration: none;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 30px;
+  color: #333;
+  font-size: 24px;
+}
+
+.featured-posts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 20px;
+}
+
+.featured-post {
+  width: 45%;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.post-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #9b59b6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.adventure { background-color: #e67e22; }
+.photography { background-color: #9b59b6; }
+.nature { background-color: #27ae60; }
+.relaxation { background-color: #3498db; }
+.vacation { background-color: #e74c3c; }
+.travel { background-color: #2ecc71; }
+
+.post-content {
+  padding: 20px;
+}
+
+.post-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.post-excerpt {
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.author-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.post-date {
+  margin-left: auto;
+}
+
+.recent-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px;
+}
+
+.recent-post {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.recent-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.recent-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .featured-posts {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .featured-post {
+    width: 90%;
+  }
+  
+  .recent-posts {
+    grid-template-columns: 1fr;
+  }
 }
